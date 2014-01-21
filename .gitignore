@@ -1,0 +1,13 @@
+tmp
+build/*
+build.log
+.fastdev.lock
+.DS_Store
+._*
+
+node_modules
+*.sublime-project
+*.sublime-workspace
+.project
+TODO
+npm-debug.log
