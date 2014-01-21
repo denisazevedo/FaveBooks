@@ -1,13 +1,12 @@
 tmp
 build/*
 build.log
-.fastdev.lock
+.settings/*
+.project
 .DS_Store
 ._*
 
 node_modules
-*.sublime-project
-*.sublime-workspace
-.project
+.fastdev.lock
 TODO
 npm-debug.log
