@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container">
+		<View layout="vertical">
+			<TextField id="titleInput" hintText="Title..."/>
+			<TextField id="authorInput" hintText="Author..."/>
+			<Button id="insertBookButton" onClick="insertBook">Add</Button>
+		</View>
+	</Window>
+</Alloy>

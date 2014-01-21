@@ -1,0 +1,10 @@
+<Alloy>
+	<Window class="container">
+		<View layout="vertical">
+			<Label class="label">Title:</Label>
+			<Label id="titleLabel" />
+			<Label class="label">Author:</Label>
+			<Label id="authorLabel" />
+		</View>
+	</Window>
+</Alloy>

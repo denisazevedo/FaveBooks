@@ -1,0 +1,22 @@
+".container": {
+	backgroundColor:"white"
+},
+
+"#titleLabel": {
+	font: {
+		fontSize: '30'
+	},
+	left: '10'
+},
+"#authorLabel": {
+	font: {
+		fontSize: '20'
+	},
+	left: '10'
+}
+
+".label": {
+	color: 'gray',
+	//textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
+	left: '10'
+}
