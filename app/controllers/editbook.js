@@ -4,8 +4,17 @@ $.titleInput.value = args.title;
 $.authorInput.value = args.author;
 
 function updateBook() {
-	//TODO To implement!
-	Ti.API.log('args.id: ' + args.id);
+	var books = Alloy.Collections.books;
+	books.fetch();
+	
+	var book = books.get(args.id);
+	book.set({
+		title: $.titleInput.value,
+		author: $.authorInput.value
+	}).save();
+	
+	books.fetch();
+	$.editWindow.close();
 }
 
 function cancelUpdate() {

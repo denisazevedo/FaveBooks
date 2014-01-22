@@ -1,6 +1,14 @@
 function Controller() {
     function updateBook() {
-        Ti.API.log("args.id: " + args.id);
+        var books = Alloy.Collections.books;
+        books.fetch();
+        var book = books.get(args.id);
+        book.set({
+            title: $.titleInput.value,
+            author: $.authorInput.value
+        }).save();
+        books.fetch();
+        $.editWindow.close();
     }
     function cancelUpdate() {
         $.editWindow.close();
