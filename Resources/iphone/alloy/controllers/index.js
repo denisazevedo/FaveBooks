@@ -44,7 +44,7 @@ function Controller() {
         });
         alertDialog.show();
         alertDialog.addEventListener("click", function(e) {
-            0 == e.index ? removeBook(event.row.bookId) : 1 == e.index;
+            0 == e.index ? $.removeBook(event.row.bookId) : 1 == e.index;
         });
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
