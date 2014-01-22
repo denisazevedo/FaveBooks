@@ -2,8 +2,8 @@
 	<Collection src="books"/>
 	<NavigationWindow id="navGroupWin">
 		<Window class="container" title="My Books">
-			<TableView dataCollection="books" id="bookTable">
-				<TableViewRow title="{title}" author="{author}" onClick="showBook"/>
+			<TableView dataCollection="books" id="bookTable" onLongpress="deleteBookDialog">
+				<TableViewRow title="{title}" author="{author}" bookId="{book_id}" onClick="showBook"/>
 			</TableView>
 			<Toolbar bottom="0">
 				<Items>

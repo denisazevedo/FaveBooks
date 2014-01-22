@@ -17,6 +17,5 @@
 
 ".label": {
 	color: 'gray',
-	//textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
 	left: '10'
 }

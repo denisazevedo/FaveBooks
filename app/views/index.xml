@@ -1,14 +1,17 @@
 <Alloy>
 	<Collection src="books"/>
 	<Window class="container">
-		<TableView dataCollection="books">
-			<TableViewRow title="{title}" author="{author}" onClick="showBook"></TableViewRow>
+		<TableView dataCollection="books" id="bookTable" onLongpress="deleteBookDialog">
+			<TableViewRow title="{title}" author="{author}" bookId="{book_id}" onClick="showBook"/>
 		</TableView>
 		<Menu id="menu" platform="android">
 			<MenuItem id="addBook"
 				title="Add book"
-				onClick="addBook"
-				showAsAction="Ti.Android_SHOW_AS_ACTION_IF_ROOM" />
+				onClick="addBook">
+			<!--
+				showAsAction="Ti.Android_SHOW_AS_ACTION_IF_ROOM" <!-- Not working -->
+			-->
+			</MenuItem>
 		</Menu>
 	</Window>
 </Alloy>

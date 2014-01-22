@@ -1,1 +1,1 @@
-module.exports = [{"isApi":true,"priority":1000.0009,"key":"Label","style":{width:Ti.UI.SIZE,height:Ti.UI.SIZE,color:"#000",}},{"isApi":true,"priority":1101.001,"key":"Label","style":{color:"blue",}},{"isClass":true,"priority":10000.0008,"key":"container","style":{backgroundColor:"white",}}];
+module.exports = [{"isApi":true,"priority":1101.0009,"key":"Label","style":{color:"blue",}},{"isClass":true,"priority":10000.0008,"key":"container","style":{backgroundColor:"white",}}];
