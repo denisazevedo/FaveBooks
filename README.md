@@ -4,6 +4,10 @@ FaveBooks
 __Second version__
 - Primary key book_id added to the model
 - Delete a book is now possible (on details view or long pressing on book)
+- Update a book
+
+__TO DO__
+- Add a validate function to the model
 
 --
 
