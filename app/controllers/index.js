@@ -29,7 +29,9 @@ function showBook(event) {
 	//create an instance of the Alloy bookview, passing it the args object containing the title and author data, and open the view
 	var bookdetailsController = Alloy.createController("bookdetails", args);
 	var bookDetailsView = bookdetailsController.getView();
+
 	bookdetailsController.removeBook($.removeBook); //bookdetails will has access to this
+	bookdetailsController.setParent($.navGroupWin); //bookdetails will has access to this
 	
 	if (OS_IOS) $.navGroupWin.openWindow(bookDetailsView);
 	if (OS_ANDROID) bookDetailsView.open();

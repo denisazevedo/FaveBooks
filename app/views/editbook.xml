@@ -1,0 +1,13 @@
+<Alloy>
+	<Window class="container" id="editWindow">
+		<View layout="vertical">
+			<!-- Reuse same fields from addbook (ex: Require type="view" src="rss" id="rssTab") -->
+			<Label class="label">Title:</Label>
+			<TextField id="titleInput" hintText="Title..."/>
+			<Label class="label">Author:</Label>
+			<TextField id="authorInput" hintText="Author..."/>
+			<Button id="cancelButton" title="Cancel" onClick="cancelUpdate"/>
+			<Button id="saveButton" title="Save" onClick="updateBook"/>
+		</View>
+	</Window>
+</Alloy>

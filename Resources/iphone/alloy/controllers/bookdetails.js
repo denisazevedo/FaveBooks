@@ -6,6 +6,11 @@ function Controller() {
             $.detailsWindow.close();
         } else alert("Error removing the book");
     }
+    function editBook() {
+        var editView = Alloy.createController("editbook", args).getView();
+        $._myParent.openWindow(editView);
+        $.detailsWindow.close();
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "bookdetails";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -16,7 +21,8 @@ function Controller() {
     var __defers = {};
     $.__views.detailsWindow = Ti.UI.createWindow({
         backgroundColor: "white",
-        id: "detailsWindow"
+        id: "detailsWindow",
+        exitOnClose: "true"
     });
     $.__views.detailsWindow && $.addTopLevelView($.__views.detailsWindow);
     $.__views.__alloyId1 = Ti.UI.createView({
@@ -54,20 +60,38 @@ function Controller() {
         id: "authorLabel"
     });
     $.__views.__alloyId1.add($.__views.authorLabel);
+    $.__views.__alloyId4 = Ti.UI.createView({
+        width: Ti.UI.FILL,
+        layout: "horizontal",
+        id: "__alloyId4"
+    });
+    $.__views.__alloyId1.add($.__views.__alloyId4);
+    $.__views.edit = Ti.UI.createButton({
+        id: "edit",
+        title: "Edit",
+        left: "15"
+    });
+    $.__views.__alloyId4.add($.__views.edit);
+    editBook ? $.__views.edit.addEventListener("click", editBook) : __defers["$.__views.edit!click!editBook"] = true;
     $.__views.remove = Ti.UI.createButton({
         id: "remove",
-        title: "Remove"
+        title: "Remove",
+        right: "15"
     });
-    $.__views.__alloyId1.add($.__views.remove);
+    $.__views.__alloyId4.add($.__views.remove);
     removeBook ? $.__views.remove.addEventListener("click", removeBook) : __defers["$.__views.remove!click!removeBook"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};
     $.titleLabel.text = args.title + " [" + args.id + "]";
     $.authorLabel.text = args.author;
+    exports.setParent = function(_parentController) {
+        $._myParent = _parentController;
+    };
     exports.removeBook = function(_function) {
         $._removeBook = _function;
     };
+    __defers["$.__views.edit!click!editBook"] && $.__views.edit.addEventListener("click", editBook);
     __defers["$.__views.remove!click!removeBook"] && $.__views.remove.addEventListener("click", removeBook);
     _.extend($, exports);
 }

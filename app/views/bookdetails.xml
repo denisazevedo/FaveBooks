@@ -1,11 +1,14 @@
 <Alloy>
-	<Window class="container" id="detailsWindow">
+	<Window class="container" id="detailsWindow" exitOnClose="true">
 		<View layout="vertical">
 			<Label class="label">Title:</Label>
 			<Label id="titleLabel" />
 			<Label class="label">Author:</Label>
 			<Label id="authorLabel" />
-			<Button id="remove" title="Remove" onClick="removeBook"/>
+			<View layout="horizontal" class="buttons">
+				<Button id="edit" title="Edit" onClick="editBook" left="15"/>
+				<Button id="remove" title="Remove" onClick="removeBook" right="15"/>
+			</View>
 		</View>
 	</Window>
 </Alloy>
