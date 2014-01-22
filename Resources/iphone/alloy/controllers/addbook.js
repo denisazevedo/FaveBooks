@@ -4,9 +4,12 @@ function Controller() {
             title: $.titleInput.value,
             author: $.authorInput.value
         });
-        myBooks.add(book);
-        book.save();
-        $.addbook.close();
+        var error = book.validate(book.attributes);
+        if (error) alert(error); else {
+            myBooks.add(book);
+            book.save();
+            $.addbook.close();
+        }
         Alloy.Collections.books.fetch();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));

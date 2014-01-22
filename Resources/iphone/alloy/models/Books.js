@@ -12,7 +12,13 @@ exports.definition = {
         }
     },
     extendModel: function(Model) {
-        _.extend(Model.prototype, {});
+        _.extend(Model.prototype, {
+            validate: function(attrs) {
+                Ti.API.log("validate executed");
+                if (0 >= attrs["title"].length) return "Error: No title!";
+                if (0 >= attrs["author"].length) return "Error: No author!";
+            }
+        });
         return Model;
     },
     extendCollection: function(Collection) {
