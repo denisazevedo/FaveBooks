@@ -55,7 +55,7 @@ function deleteBookDialog(event) {
 
 	alertDialog.addEventListener('click', function(e) {
 		if (e.index == 0) {// clicked "YES"
-			removeBook(event.row.bookId);
+			$.removeBook(event.row.bookId);
 		} else if (e.index == 1) {// clicked "NO"
 		}
 	});
